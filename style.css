@@ -16,7 +16,16 @@
     user-select: none;
 }
 
-
+.pontszam
+{
+    margin-top: 50px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 200px;
+    flex-direction: row;
+    font-size: 30px;
+}
 
 #player
 {

@@ -34,7 +34,7 @@ function checkWin() {
     square8 = document.getElementById("square8");
     square9 = document.getElementById("square9");
 
-    
+
 
     //Player 1 
     if (square1.innerHTML == "X" && square2.innerHTML == "X" && square3.innerHTML == "X") {
@@ -65,7 +65,7 @@ function checkWin() {
         return true;
     }
 
-    
+
     else if (square4.innerHTML == "O" && square5.innerHTML == "O" && square6.innerHTML == "O") {
         return true;
     }
@@ -90,19 +90,18 @@ function checkWin() {
     else if (square3.innerHTML == "O" && square5.innerHTML == "O" && square7.innerHTML == "O") {
         return true;
     }
-    
-    else{
+
+    else {
         return false;
     }
-    
+
 
 
     //Player2
 }
 
 
-function checkDraw()
-{
+function checkDraw() {
     square1 = document.getElementById("square1").innerHTML;
     square2 = document.getElementById("square2").innerHTML;
     square3 = document.getElementById("square3").innerHTML;
@@ -113,12 +112,10 @@ function checkDraw()
     square8 = document.getElementById("square8").innerHTML;
     square9 = document.getElementById("square9").innerHTML;
 
-    if(square1.length > 0 && square2.length > 0 && square3.length > 0 && square4.length > 0 && square5.length > 0 && square6.length > 0 && square7.length > 0 && square8.length > 0 && square9.length > 0) 
-    {
+    if (square1.length > 0 && square2.length > 0 && square3.length > 0 && square4.length > 0 && square5.length > 0 && square6.length > 0 && square7.length > 0 && square8.length > 0 && square9.length > 0) {
         return true;
     }
-    else
-    {
+    else {
         return false;
     }
 }
@@ -143,10 +140,44 @@ function place(title) {
         draw = checkDraw();
         if (win == true) {
             document.getElementById("melyik").innerHTML = "A nyertes: Player" + player
+
+            if (player == 1) {
+                var score = parseInt(document.getElementById("player1wins").innerHTML);
+                score = score + 1
+                document.getElementById("player1wins").innerHTML = score
+            }
+            else if (player == 2) {
+                var score = parseInt(document.getElementById("player2wins").innerHTML);
+                score = score + 1
+                document.getElementById("player2wins").innerHTML = score
+
+            }
+           
+            square1 = document.getElementById("square1").innerHTML = "";
+            square2 = document.getElementById("square2").innerHTML = "";
+            square3 = document.getElementById("square3").innerHTML = "";
+            square4 = document.getElementById("square4").innerHTML = "";
+            square5 = document.getElementById("square5").innerHTML = "";
+            square6 = document.getElementById("square6").innerHTML = "";
+            square7 = document.getElementById("square7").innerHTML = "";
+            square8 = document.getElementById("square8").innerHTML = "";
+            square9 = document.getElementById("square9").innerHTML = "";
+
+            document.getElementById("melyik").innerHTML = "Player" + player+ " kezd"
         }
-        else if(draw == true)
-        {
+        else if (draw == true) {
             document.getElementById("melyik").innerHTML = "Döntetlen!"
+            square1 = document.getElementById("square1").innerHTML = "";
+            square2 = document.getElementById("square2").innerHTML = "";
+            square3 = document.getElementById("square3").innerHTML = "";
+            square4 = document.getElementById("square4").innerHTML = "";
+            square5 = document.getElementById("square5").innerHTML = "";
+            square6 = document.getElementById("square6").innerHTML = "";
+            square7 = document.getElementById("square7").innerHTML = "";
+            square8 = document.getElementById("square8").innerHTML = "";
+            square9 = document.getElementById("square9").innerHTML = "";
+
+            document.getElementById("melyik").innerHTML = "Player" + player+ " kezd"
         }
         else {
             round++;
